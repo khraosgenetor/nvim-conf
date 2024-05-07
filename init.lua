@@ -3,7 +3,7 @@ vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.cmd("set relativenumber")
-vim.g.mapleader = ' '
+vim.g.mapleader = " "
 
 vim.o.clipboard = "unnamedplus"
 
@@ -22,5 +22,5 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
 
-vim.keymap.set('n', "<leader>wq", ":wqa<CR>", { desc = "Writes and Quits all Windows" })
-vim.keymap.set('n', "<leader>wa", ":wa<CR>", { desc = "Writes to all Windows" })
+vim.keymap.set("n", "<leader>wq", ":wqa<CR>", { desc = "Writes and Quits all Windows" })
+vim.keymap.set("n", "<leader>wa", ":wa<CR>", { desc = "Writes to all Windows" })
