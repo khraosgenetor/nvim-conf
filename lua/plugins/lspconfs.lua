@@ -28,6 +28,9 @@ return {
       lspconfig.ast_grep.setup({
         capabilities = capabilities,
       })
+      lspconfig.asm_lsp.setup({
+        capabilities = capabilities,
+      })
       vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
       vim.keymap.set("n", "<leader>gh", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "<leader>gi", vim.lsp.buf.implementation, {})
