@@ -24,13 +24,10 @@ return {
 					.. "/api/chat -d $body"
 			end,
 			display_mode = "float",
-			show_prompt = false,
-			show_model = false,
+			show_prompt = true,
+			show_model = true,
 			no_auto_close = false,
 			debug = false,
 		},
-		config = function()
-      vim.keymap.set('n', '<leader>ai', ":Gen<CR>", {})
-		end,
 	},
 }
