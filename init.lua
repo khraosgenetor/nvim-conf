@@ -24,3 +24,4 @@ require("lazy").setup("plugins")
 
 vim.keymap.set("n", "<leader>wq", ":wqa<CR>", { desc = "Writes and Quits all Windows" })
 vim.keymap.set("n", "<leader>wa", ":wa<CR>", { desc = "Writes to all Windows" })
+vim.keymap.set({ 'n', 'v' }, '<leader>]', ':Gen<CR>')
