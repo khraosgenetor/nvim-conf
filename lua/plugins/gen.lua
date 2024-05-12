@@ -1,7 +1,7 @@
 return {
   "David-Kunz/gen.nvim",
   opts = {
-    model = "phi3",
+    model = "genesis",
     host = "localhost",
     port = "11434",
     quit_map = "q",

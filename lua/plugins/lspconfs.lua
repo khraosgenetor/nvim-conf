@@ -28,6 +28,9 @@ return {
       lspconfig.ast_grep.setup({
         capabilities = capabilities,
       })
+      lspconfig.basedpyright.setup({
+        capabilities = capabilities,
+      })
       lspconfig.asm_lsp.setup({
         capabilities = capabilities,
       })
