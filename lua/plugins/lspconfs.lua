@@ -25,13 +25,16 @@ return {
       lspconfig.clangd.setup({
         capabilities = capabilities,
       })
-      lspconfig.ast_grep.setup({
-        capabilities = capabilities,
-      })
       lspconfig.basedpyright.setup({
         capabilities = capabilities,
       })
       lspconfig.asm_lsp.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.eslint.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.tsserver.setup({
         capabilities = capabilities,
       })
       vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
