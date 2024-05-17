@@ -8,6 +8,11 @@ return {
       "nvim-lua/popup.nvim",
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-ui-select.nvim",
+      "nvim-telescope/telescope-frecency.nvim",
+      "nvim-telescope/telescope-media-files.nvim",
+      "nvim-telescope/telescope-project.nvim",
+      "nvim-telescope/telescope-github.nvim",
+      "nvim-telescope/telescope-bibtex.nvim",
     },
     config = function()
       local builtin = require("telescope.builtin")
@@ -19,8 +24,28 @@ return {
       --extensions
 
       local z_utils = require("telescope._extensions.zoxide.utils")
-
+      local project_actions = require("telescope._extensions.project.actions")
       extensions = {
+        project = {
+          base_dirs = {
+            "~/dev/src",
+            { "~/dev/src2" },
+            { "~/dev/src3",        max_depth = 4 },
+            { path = "~/dev/src4" },
+            { path = "~/dev/src5", max_depth = 2 },
+          },
+          hidden_files = true, -- default: false
+          theme = "dropdown",
+          order_by = "asc",
+          search_by = "title",
+          sync_with_nvim_tree = true, -- default false
+          -- default for on_project_selected = find project files
+          on_project_selected = function(prompt_bufnr)
+            -- Do anything you want in here. For example:
+            project_actions.change_working_directory(prompt_bufnr, false)
+            require("harpoon.ui").nav_file(1)
+          end,
+        },
         file_browser = {
           theme = "ivy",
           hijack_netrw = true,
@@ -57,6 +82,11 @@ return {
       require("telescope").load_extension("zoxide")
       require("telescope").load_extension("ui-select")
       require("telescope").load_extension("file_browser")
+      require("telescope").load_extension("frecency")
+      require("telescope").load_extension("media_files")
+      require("telescope").load_extension("project")
+      require("telescope").load_extension("gh")
+      require("telescope").load_extension("bibtex")
     end,
   },
   {
