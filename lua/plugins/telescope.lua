@@ -21,6 +21,14 @@ return {
       local z_utils = require("telescope._extensions.zoxide.utils")
 
       extensions = {
+        file_browser = {
+          theme = "ivy",
+          hijack_netrw = true,
+          mappings = {
+            ["i"] = {},
+            ["n"] = {},
+          },
+        },
         zoxide = {
           prompt_title = "[ Walking on the shoulders of TJ ]",
           mappings = {
@@ -48,6 +56,7 @@ return {
 
       require("telescope").load_extension("zoxide")
       require("telescope").load_extension("ui-select")
+      require("telescope").load_extension("file_browser")
     end,
   },
   {
@@ -76,6 +85,16 @@ return {
           builtin.live_grep()
         end
       end, {})
+    end,
+  },
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim",
+    },
+    config = function()
+      vim.keymap.set("n", "<C-b>", ":Telescope file_browser<CR>", { desc = "Show the filesystem." })
     end,
   },
 }
