@@ -37,7 +37,7 @@ return {
       lspconfig.eslint.setup({
         capabilities = capabilities,
       })
-      lspconfig.tsserver.setup({
+      lspconfig.ts_ls.setup({
         capabilities = capabilities,
       })
       vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
