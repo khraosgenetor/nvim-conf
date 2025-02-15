@@ -1,7 +1,7 @@
 return {
 	"cbochs/grapple.nvim",
 	config = function()
-    local grap = require("grapple")
+		local grap = require("grapple")
 		vim.keymap.set("n", "<leader>tg", grap.toggle, { desc = "Toggle Grapple" })
 		vim.keymap.set("n", "<leader>tt", grap.toggle_tags, { desc = "Toggle Grapple Tags" })
 		vim.keymap.set("n", "<leader>tw", grap.open_scopes, { desc = "Shows Grapple's Scopes" })
